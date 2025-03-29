@@ -1,0 +1,134 @@
+:root {
+    --primary: rgba(99, 16, 16, 1);
+    --secondary: rgba(191, 174, 159, 1);
+    --grass: rgba(73, 89, 37, 1);
+    --background: rgba(217, 217, 217, 1);
+    --success: rgba(4, 218, 0, 1);
+    --error: rgb(255, 0, 0);
+    --white: white;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--background);
+    color: var(--primary);
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 16rem 0px 16rem;
+}
+
+header {
+    position: relative;
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    white-space: nowrap;
+    gap: 2rem; 
+}
+
+.logo {
+    margin-right: 32px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.btnheader {
+    all: unset;
+
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 1.30rem;
+    margin: 0px 1rem 0px 1rem;
+    padding: 5px 10px 5px 10px;
+
+}
+
+.btnheader:hover,
+.btnheader:focus 
+{
+    /* border: 1px solid; */
+    transform: translateY(-1px);
+    box-shadow: 1px 3px 20px -9px var(--primary);
+}
+
+/* ================ SEARCH ================ */
+
+.search {
+    position: relative;
+    margin-left: auto; 
+    cursor: pointer;
+}
+
+.search:hover i:nth-child(1) {
+    left: -4px;
+}
+
+.search i:nth-child(1) {
+transition: all 0.3s ease;
+position: absolute;
+right: initial;
+left: 2px;
+top: 0px;
+padding: 8px;
+border-radius: 18px 0px 0px 18px ;
+background-color: var(--white);
+}
+
+.search i:nth-child(3) {
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    opacity: 0;
+}
+
+.search:focus-within i:nth-child(3) {
+    opacity: 1;
+    right: 10px;
+}
+
+.search:focus-within i:nth-child(1) {
+    left: -20px;
+}
+
+.searchInp {
+    all: unset;
+
+    caret-color: var(--primary);
+    background-color: var(--white);
+    width: 200px;
+    height: 32px;
+    padding: 0px 16px 0px 16px;
+    border-radius: 18px;
+}
+
+.search:focus-within .searchInp {
+    padding-right: 25px;
+    cursor: text;
+}
+
+/* ================ /SEARCH ================ */
+
+.avatar img {
+    width: 45px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.avatar img:hover {
+    color: var(--primary);
+}

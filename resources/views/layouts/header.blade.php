@@ -1,4 +1,5 @@
 <header>
+    
     <div class="logo">
         <img src="{{asset('storage/GUI/Logo.svg')}}" alt="">
     </div>

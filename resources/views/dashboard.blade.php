@@ -13,5 +13,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
+
+    <a href="{{ route('test') }}">Test</a>
 </x-app-layout>

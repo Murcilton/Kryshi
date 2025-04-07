@@ -84,7 +84,9 @@
     </div>
 
     <div class="cabinet">
-        <button class="cabinetBtn">Войти в личный кабинет <i class="fa-solid fa-id-card"></i><i class="fa-solid fa-chevron-right"></i> </button>
+        <a href="{{ route('login') }}">
+            <button class="cabinetBtn">Войти в личный кабинет <i class="fa-solid fa-id-card"></i><i class="fa-solid fa-chevron-right"></i> </button>
+        </a>
     </div>
 
 </div>

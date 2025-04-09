@@ -6,9 +6,11 @@
 @if (Auth::check())
 <form action="{{route('test1', Auth::user()->id)}}" method="POST" enctype="multipart/form-data" class="mt-4">
                 @csrf
+                
                 <div class="form-group">
                     <label for="Text1">Описание:</label>
                     <textarea name="Text1" class="form-control" rows="2" required></textarea>
+                
                 </div>
                 <div class="form-group">
                     <label for="Text2">Описание Основное:</label>
@@ -18,10 +20,16 @@
                     <label for="Text2">Цена:</label>
                     <textarea name="price" class="form-control" rows="1" required></textarea>
                 </div>
+                <div class="form-group">
+                    <input type="file" name="img" accept="image/*" required>
+                </div>
                 <button type="submit" class="btn btn-primary">Создать</button>
 </form>
   
 @endif
+
+
+
 
 <!-- Вывод объявлений  -->
 
@@ -31,7 +39,7 @@
 <div class="cards-container">
 <div class="card card-middle mt-6">
             <img class="theLine" src="{{asset('storage\GUI\cardsHome\TheLine.svg')}}" alt="">
-            <img class="card-img" src="{{asset('storage\GUI\cardsHome\image (1).png')}}" alt="">
+            <img class="card-img" src="{{ asset('storage/' . $test->img) }}" alt="">
             <div class="content">
             <form action="{{route('test3', $test->id)}}" method="POST" enctype="multipart/form-data" >
             @csrf   

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('id_user');
             $table->text('Text1');
             $table->text('price');
+            $table->string('img');
             $table->text('Text2');
             $table->timestamps();
         });

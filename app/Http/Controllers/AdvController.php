@@ -15,17 +15,21 @@ class AdvController extends Controller
     public function test1(Request $request,$id){
         $request->validate([
             'id_user' => 'integer',
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'Text1' => 'required|string',
             'Text2' => 'required|string',
             'price' => 'required|numeric', 
 
         ]);
 
+        $path = $request->file('img')->store('images', 'public');
+
         $adv = new Adv();
         $adv->id_user = $id;
         $adv->Text1 = $request->Text1;
         $adv->Text2 = $request->Text2;
         $adv->price = $request->price;
+        $adv->img = $path;
 
         $adv->save();
 
@@ -34,8 +38,11 @@ class AdvController extends Controller
         return redirect()->route('test');
     }
     public function test3(Request $request,$id){
+
         $adv= Adv::findOrFail($id);
+
         $request->validate([
+           
             'Text1' => 'required|string',
             'Text2' => 'required|string',
             'price' => 'required|numeric', 
@@ -55,4 +62,5 @@ class AdvController extends Controller
         $adv->delete();
         return redirect()->route('test');
     }
+
 }

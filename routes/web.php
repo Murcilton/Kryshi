@@ -32,8 +32,13 @@ Route::middleware('auth')->group(function () {
 
 Route::get('home',[HomeController::class,'index'])->name('home');
 Route::get('test',[AdvController::class,'test'])->name('test');
+
 Route::post('test1/{id}',[AdvController::class,'test1'])->name('test1');
+
 Route::delete('test2/{id}',[AdvController::class,'test2'])->name('test2');
+
 Route::put('test3/{id}',[AdvController::class,'test3'])->name('test3');
+
+Route::post('/testImg', [AdvController::class, 'testImg'])->name('testImg'); //изображение
 
 require __DIR__.'/auth.php';

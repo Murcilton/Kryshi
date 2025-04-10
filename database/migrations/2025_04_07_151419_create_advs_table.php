@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('advs', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user');
+            $table->unsignedBigInteger('id_user');
             $table->text('Text1');
             $table->text('price');
             $table->string('img');
             $table->text('Text2');
             $table->timestamps();
+
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

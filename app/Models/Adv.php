@@ -15,4 +15,9 @@ class Adv extends Model
         'Text1',
         'Text2',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

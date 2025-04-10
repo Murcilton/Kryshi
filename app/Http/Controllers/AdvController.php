@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adv;
+use App\Models\User;
 use Illuminate\Http\Request;
 use PHPUnit\Event\Code\Test;
 
@@ -10,7 +11,9 @@ class AdvController extends Controller
 {
     public function test(){
         $tests = Adv::all();
-        return view('test',compact('tests'));
+        $id =1;
+        $user = User::with('advs')->find($id);
+        return view('test',compact('tests','user'));
     }
     public function test1(Request $request,$id){
         $request->validate([
